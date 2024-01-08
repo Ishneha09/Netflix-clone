@@ -1,20 +1,32 @@
-import "./App.scss";
-import{BrowserRouter as Router,Routes,Route} from "react-router-dom";
 import React from 'react'
-import Home from "./Home";
-import Header from "./Header";
+import {BrowserRouter as Router , Route , Routes} from "react-router-dom";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import Services from "./components/Services";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
-function App() {
+
+
+ import "./styles/App.scss";
+ import "./styles/header.scss";
+ import "./styles/footer.scss";
+ import "./styles/contact.scss";
+ import "./styles/home.scss";
+ import "./styles/mediaquery.scss";
+ 
+const App = () => {
   return (
-    
     <Router>
-      <Header />
-    <Routes>
-      <Route path= "/" element= {<Home />}/>
-     </Routes>
-</Router>
-   
-  );
+        <Header />
+        <Routes>
+        <Route path = "/" element = {<Home />} />
+        <Route path = "/contact" element = {<Contact />} />
+        <Route path = "/services" element = {<Services />} />
+        </Routes>
+        <Footer />
+        </Router>
+  )
 }
 
-export default App;
+export default App
